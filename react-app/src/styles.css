@@ -1,0 +1,13 @@
+
+body {
+    font-size: 20px;
+  }
+  
+  .mainPage {
+   border: blue solid 2px;
+   width: 100%;
+   max-width: 100vw;
+   background-image: url(https://app.rockpapercoin.com/_next/static/media/rock-paper-coin-0034.a5eac801.jpg);
+   background-position: 50%;
+   background-size: cover;
+  }
