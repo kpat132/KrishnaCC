@@ -45,7 +45,7 @@ export default class LoginForm extends Component {
                         <a className='resetLink'>Forgot your Password?</a>
                     </div>
 
-                  <button className="submitButton" disabled="" id="login-button__submit" type="submit">
+                  <button className="submitButton" id="login-button__submit" type="submit">
                     <div className="buttontext-container ">
                         <p className="button-text ">
                             Sign In
