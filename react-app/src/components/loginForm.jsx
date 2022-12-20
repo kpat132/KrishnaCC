@@ -2,11 +2,22 @@ import React,{Component} from 'react';
 
 export default class LoginForm extends Component {
 
+    isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+      }
     handleSubmit = (event) => {
         //hit API endpoint /login
+
         event.preventDefault();
-        console.log("Email",event.target.email.value)
-        console.log("Password",event.target.password.value)
+
+        //Email Validation
+        if (!(/\S+@\S+\.\S+/.test(event.target.email.value))) {
+            console.log('Email is invalid');
+          } else {
+            console.log("Email: ",event.target.email.value)
+            console.log("Password: ",event.target.password.value)
+          }
+        
       }
     
     render() {
