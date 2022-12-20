@@ -1,7 +1,14 @@
 import React,{Component} from 'react';
 
 export default class LoginForm extends Component {
-  
+
+    handleSubmit = (event) => {
+        //hit API endpoint /login
+        event.preventDefault();
+        console.log("Email",event.target.email.value)
+        console.log("Password",event.target.password.value)
+      }
+    
     render() {
       return (
         
@@ -9,7 +16,7 @@ export default class LoginForm extends Component {
                 <h2 className='formHeader'>Welcome back!</h2>
                 <p>Sign in and get to it.</p>
 
-                <form className="formWrapper">
+                <form onSubmit={this.handleSubmit} className="formWrapper">
                     <div className="email">
                         <div className = "input-label">
                             <p className='titleLabel'>Email</p>

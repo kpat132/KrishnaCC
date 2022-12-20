@@ -10,7 +10,7 @@ export default class MainPage extends Component {
             <main id="page-login" className='login_container'>
           <LoginForm />
           <footer id="footer-wrapper" className="footer">
-            <p class="footer-text">
+            <p className="footer-text">
                 © 2022 Rock Paper Coin
             </p>
         </footer>
