@@ -218,7 +218,12 @@
     height: 3rem;
     border-radius: 5px;
     border: none;
+    }
+  .submitButton{
     background-color: rgb(192, 216, 189);
+    }
+    .submitButton:active{
+      background-color: rgb(220,220,220);
     }
   .buttontext-container{
     display: flex;
