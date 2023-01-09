@@ -16,19 +16,27 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 
-app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-  });
+// app.use((req, res, next) => {
+//     res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+//   });
 
-app.get('/test', function (req,res){
+app.get('/test', function (req, res) {
     res.send('Smoke Test!');
 })
 
-app.post('/login',(req,res)=>{
-    console.log('login route');
+app.get('/login', (req, res) => {
+    let response = {};
+
+    if (!(/\S+@\S+\.\S+/.test(req.query.email))) {
+        return res.json({ "Status": "Invalid Email Format", data: {} })
+
+    } else {
+        response = { "Status": "Success", data: { Email: req.query.email, Password: req.query.pass } }
+        return res.json(response);
+    }
 })
 
-app.listen(port, (req,res)=>{
+app.listen(port, (req, res) => {
     console.log("Server listening at port", port)
 })
 
